@@ -1,17 +1,18 @@
 class Animal:
-    def __init__(self, name=None, alive=True, fed=False,):  # Для класса Animal атрибуты alive = True(живой) и fed =
+    def __init__(self, name=None, alive=True, fed=False, ):  # Для класса Animal атрибуты alive = True(живой) и fed =
         self.alive = alive  # False(накормленный), name - имя
         self.fed = fed
         self.name = name
 
 
-class Plant:
-    def __init__(self, name=None, edible=False):  # False(съедобность), name - индивидуальное название
-        self.edible = edible
-        self.name = name
+# class Plant:
+#     def __init__(self, name=None, edible=False):  # False(съедобность), name - индивидуальное название
+#         self.edible = edible
+#         self.name = name
 
 class Plant:
     edible = False
+
     def __init__(self, name=None):  # False(съедобность), name - индивидуальное название
         self.name = name
 
@@ -28,6 +29,7 @@ class Mammal(Animal):
         else:
             print(f'{self.name} не стал есть {food.name}')
             self.alive = False
+
     pass
 
 
@@ -39,6 +41,7 @@ class Predator(Animal):
         else:
             print(f'{self.name} не стал есть {food.name}')
             self.alive = False
+
     pass
 
 
