@@ -4,24 +4,6 @@ class Animal:
         self.fed = fed
         self.name = name
 
-
-# class Plant:
-#     def __init__(self, name=None, edible=False):  # False(съедобность), name - индивидуальное название
-#         self.edible = edible
-#         self.name = name
-
-class Plant:
-    edible = False
-
-    def __init__(self, name=None):  # False(съедобность), name - индивидуальное название
-        self.name = name
-
-
-# 4 класса наследника:
-# Mammal, Predator для Animal.
-# Flower, Fruit для Plant.
-
-class Mammal(Animal):
     def eat(self, food):
         if food.edible:
             print(f'{self.name} съел {food.name}')
@@ -33,24 +15,27 @@ class Mammal(Animal):
     pass
 
 
-class Predator(Animal):
-    def eat(self, food):
-        if food.edible == True:
-            print(f'{self.name} съел {food.name}')
-            self.fed = True
-        else:
-            print(f'{self.name} не стал есть {food.name}')
-            self.alive = False
+class Plant:
+    def __init__(self, name=None, edible=False):  # False(съедобность), name - индивидуальное название
+        self.edible = edible
+        self.name = name
 
+
+class Fruit(Plant):
+    def __init__(self, name, edible=True):
+        super().__init__(name, edible)
+        self.edible = edible
+
+
+class Mammal(Animal):
+    pass
+
+
+class Predator(Animal):
     pass
 
 
 class Flower(Plant):
-    pass
-
-
-class Fruit(Plant):
-    edible = True
     pass
 
 
